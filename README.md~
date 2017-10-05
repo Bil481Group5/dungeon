@@ -4,7 +4,6 @@
 BİL481
 
 Ömer Faruk Kurular 141101039 commit<br />
-
 Bekir Berk Şenel 141101056 commit 
 
 [![Travis CI](https://travis-ci.org/mafagafogigante/dungeon.svg?branch=master)](https://travis-ci.org/mafagafogigante/dungeon)
