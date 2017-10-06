@@ -3,7 +3,7 @@
 
 BİL481
 
-<<<<<<< HEAD
+<<<<<<< HEAD<br/>
 Ömer Faruk Kurular 141101039 commit<br/>
 Furkan Fatih Arslan 141101007 commit<br/>
 Bekir Berk Şenel 141101056 commit
