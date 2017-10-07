@@ -6,7 +6,7 @@ BİL481
 <<<<<<< HEAD<br/>
 Ömer Faruk Kurular 141101039 commit<br/>
 Furkan Fatih Arslan 141101007 commit<br/>
-Bekir Berk Şenel 141101056 commit
+Bekir Berk Şenel 141101056 commit<br/>
 Muharrem Tolga Acar 141101034 commit
 >>>>>>> 95a62eba9f402cfc340b10e4f6625913d2f97374
 
