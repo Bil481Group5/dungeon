@@ -144,7 +144,7 @@ final class CommandSets {
       }
     });
     commandSet.addCommand(new Command("go", "Makes the character move in the specified direction.") {
-      @Override
+      @Override//kullanici go ile 4 yonden birine gittiginde gorunebilecek bolge sayisi degiscek.
       public void execute(@NotNull String[] arguments) {
         Game.getGameState().getHero().walk(arguments);
       }
