@@ -26,10 +26,6 @@
         {
           "id": "FLAIL",
           "probability": 0.2
-        },
-        {
-          "id": "MUSHROOM",
-          "probability": 0.190
         }
       ],
       "blockedEntrances": [
@@ -79,10 +75,6 @@
         {
           "id": "CORVUS_EDGE",
           "probability": 0.1
-        },
-        {
-          "id": "MUSHROOM",
-          "probability": 0.190
         }
       ],
       "blockedEntrances": [
@@ -118,10 +110,6 @@
         {
           "id": "TOME_OF_FINGER_OF_DEATH",
           "probability": 0.1
-        },
-        {
-          "id": "MUSHROOM",
-          "probability": 0.190
         }
       ],
       "blockedEntrances": [
@@ -197,10 +185,6 @@
         {
           "id": "HISTORY_OF_THE_THIRD_ERA",
           "probability": 0.05
-        },
-        {
-          "id": "MUSHROOM",
-          "probability": 0.190
         }
       ]
     },
@@ -271,16 +255,16 @@
           "probability": 0.05
         },
         {
+          "id": "POTION_OF_THE_WARRIOR",
+          "probability": 0.25
+        },
+        {
           "id": "TOME_OF_PERCEIVE",
           "probability": 0.05
         },
         {
           "id": "TOME_OF_DISPLACE",
           "probability": 0.05
-        },
-        {
-          "id": "MUSHROOM",
-          "probability": 0.190
         }
       ]
     },
@@ -318,6 +302,7 @@
           },
           "delay": 4
         }
+
       ],
       "items": [
         {
@@ -335,10 +320,6 @@
         {
           "id": "TOME_OF_FINGER_OF_DEATH",
           "probability": 0.05
-        },
-        {
-          "id": "MUSHROOM",
-          "probability": 0.190
         }
       ]
     },
@@ -368,6 +349,14 @@
           },
           "delay": 12
         },
+	{
+          "id": "GOD_OF_DEATH",
+          "population": {
+            "minimum": 1,
+            "maximum": 1
+          },
+          "delay": 4
+        },
         {
           "id": "GHOUL",
           "population": {
@@ -385,10 +374,6 @@
         {
           "id": "TOME_OF_PERCEIVE",
           "probability": 0.05
-        },
-        {
-          "id": "MUSHROOM",
-          "probability": 0.190
         }
       ]
     },
@@ -435,6 +420,14 @@
           "probability": 1.0
         },
         {
+          "id": "HEALING_POTION",
+          "probability": 0.6
+        },
+        {
+          "id": "HEALING_DRAUGHT",
+          "probability": 0.4
+        },
+        {
           "id": "GLASS_SWORD",
           "probability": 0.2
         },
@@ -445,10 +438,6 @@
         {
           "id": "TOME_OF_PERCEIVE",
           "probability": 0.05
-        },
-        {
-          "id": "MUSHROOM",
-          "probability": 0.190
         }
       ]
     },
@@ -529,10 +518,6 @@
         {
           "id": "PAGE_FROM_VOLUND_LOKE_FREY_S_DIARY",
           "probability": 0.05
-        },
-        {
-          "id": "MUSHROOM",
-          "probability": 0.190
         }
       ]
     },
@@ -613,10 +598,6 @@
         {
           "id": "TOME_OF_PERCEIVE",
           "probability": 0.05
-        },
-        {
-          "id": "MUSHROOM",
-          "probability": 0.190
         }
       ]
     },
@@ -697,10 +678,6 @@
         {
           "id": "TOME_OF_HEAL",
           "probability": 0.1
-        },
-        {
-          "id": "MUSHROOM",
-          "probability": 0.190
         }
       ]
     },
@@ -797,10 +774,6 @@
         {
           "id": "DAGGER_OF_INFINITY",
           "probability": 0.05
-        },
-        {
-          "id": "MUSHROOM",
-          "probability": 0.190
         }
       ]
     },
@@ -881,10 +854,6 @@
         {
           "id": "THE_SUN_BLADE",
           "probability": 0.025
-        },
-        {
-          "id": "MUSHROOM",
-          "probability": 0.190
         }
       ]
     },
@@ -945,10 +914,6 @@
         {
           "id": "STONE",
           "probability": 0.8
-        },
-        {
-          "id": "MUSHROOM",
-          "probability": 0.190
         }
       ]
     },
@@ -1012,10 +977,6 @@
         {
           "id": "SPEAR",
           "probability": 0.3
-        },
-        {
-          "id": "MUSHROOM",
-          "probability": 0.190
         }
       ]
     },
@@ -1076,10 +1037,6 @@
         {
           "id": "AXE",
           "probability": 0.3
-        },
-        {
-          "id": "MUSHROOM",
-          "probability": 0.190
         }
       ]
     },
@@ -1135,10 +1092,6 @@
         {
           "id": "CLUB",
           "probability": 0.4
-        },
-        {
-          "id": "MUSHROOM",
-          "probability": 0.190
         }
       ]
     },
@@ -1211,10 +1164,6 @@
         {
           "id": "TOME_OF_REPAIR",
           "probability": 0.05
-        },
-        {
-          "id": "MUSHROOM",
-          "probability": 0.190
         }
       ]
     }
