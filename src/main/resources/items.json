@@ -207,14 +207,13 @@
       "integrityDecrementOnEat": 10
     },
     {
-      "id": "HEALING_POTION",
+      "id": "MUSHROOM",
       "type": "Potion",
       "name": {
-        "singular": "Healing Potion"
+        "singular": "Magic Mushroom"
       },
-      "rarity": "COMMON",
+      "rarity": "UNCOMMON",
       "tags": [
-        "WEAPON",
         "DRINKABLE",
         "WEIGHT_PROPORTIONAL_TO_INTEGRITY"
       ],
@@ -222,114 +221,31 @@
         "current": 10,
         "maximum": 10
       },
-      "weight": 0.2,
-      "visibility": "60.00%",
-      "damage": 4,
-      "hitRate": "50.00%",
-      "integrityDecrementOnHit": 5,
-      "drinkableDoses": 2,
-      "drinkableEffects": [
-        [
-          "HEALING",
-          10
-        ]
-      ],
-      "integrityDecrementPerDose": 5
-    },
-    {
-      "id": "HEALING_DRAUGHT",
-      "type": "Potion",
-      "name": {
-        "singular": "Healing Draught"
-      },
-      "rarity": "UNCOMMON",
-      "tags": [
-        "WEAPON",
-        "DRINKABLE",
-        "WEIGHT_PROPORTIONAL_TO_INTEGRITY"
-      ],
-      "integrity": {
-        "current": 20,
-        "maximum": 20
-      },
-      "weight": 0.4,
-      "visibility": "65.00%",
-      "damage": 6,
-      "hitRate": "60.00%",
-      "integrityDecrementOnHit": 5,
-      "drinkableDoses": 4,
-      "drinkableEffects": [
-        [
-          "HEALING",
-          15
-        ]
-      ],
-      "integrityDecrementPerDose": 5
-    },
-    {
-      "id": "POTION_OF_THE_WARRIOR",
-      "type": "Potion",
-      "name": {
-        "singular": "Potion of the Warrior",
-        "plural": "Potions of the Warrior"
-      },
-      "rarity": "UNCOMMON",
-      "tags": [
-        "WEAPON",
-        "DRINKABLE",
-        "WEIGHT_PROPORTIONAL_TO_INTEGRITY"
-      ],
-      "integrity": {
-        "current": 10,
-        "maximum": 10
-      },
-      "weight": 0.2,
-      "visibility": "60.00%",
-      "damage": 4,
-      "hitRate": "50.00%",
+      "weight": 0.05,
+      "visibility": "15.00%",
+      "damage": 0,
+      "hitRate": "00.00%",
       "integrityDecrementOnHit": 5,
       "drinkableDoses": 1,
       "drinkableEffects": [
+        [
+          "HEALING",
+          30
+        ],
         [
           "EXTRA_ATTACK",
           4,
-          "1 hour"
-        ]
-      ],
-      "integrityDecrementPerDose": 10
-    },
-    {
-      "id": "POTION_OF_THE_FISHERMAN",
-      "type": "Potion",
-      "name": {
-        "singular": "Potion of the Fisherman",
-        "plural": "Potions of the Fisherman"
-      },
-      "rarity": "COMMON",
-      "tags": [
-        "WEAPON",
-        "DRINKABLE",
-        "WEIGHT_PROPORTIONAL_TO_INTEGRITY"
-      ],
-      "integrity": {
-        "current": 10,
-        "maximum": 10
-      },
-      "weight": 0.2,
-      "visibility": "60.00%",
-      "damage": 4,
-      "hitRate": "50.00%",
-      "integrityDecrementOnHit": 5,
-      "drinkableDoses": 1,
-      "drinkableEffects": [
+          "10 hour"
+        ],
         [
           "FISHING_PROFICIENCY",
-          "15%",
-          "1 hour"
+          "30%",
+          "10 hour"
         ]
       ],
       "integrityDecrementPerDose": 10
-    },
+    },      
+
     {
       "id": "BEAR_BEEF",
       "type": "Food",
@@ -884,7 +800,7 @@
         "current": 15,
         "maximum": 15
       },
-      "weight": 1.0,
+      "weight": 1,
       "visibility": "45.00%",
       "damage": 40,
       "hitRate": "90.00%",
@@ -1432,7 +1348,7 @@
         "current": 20,
         "maximum": 20
       },
-      "weight": 0.10,
+      "weight": 0.1,
       "visibility": "60.00%",
       "damage": 5,
       "hitRate": "65.00%",
