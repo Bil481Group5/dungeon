@@ -25,15 +25,7 @@ final class AttackAlgorithmWriter {
    * @param criticalHit a boolean indicating if the attack was a critical hit or not
    */
   static void writeInflictedDamage(Creature attacker, int hitDamage, Creature defender, boolean criticalHit) {
-    /*DungeonString stringg = new DungeonString();
-    int random = (int) ((Math.random() * 2) + 1);
-    if (random == 1) {
-      int r = (int) ((Math.random() * 100) + 1);
-      stringg.append(" Possibility of creature attacks is % " + r);
-    }
-    stringg.append(" Attack not happened ");
-    Writer.writeAndWait(stringg);*/
-
+  
     DungeonString string = new DungeonString();
     string.setColor(attacker.getId().equals(Game.getGameState().getHero().getId()) ? Color.GREEN : Color.RED);
     string.append(attacker.getName().getSingular());
