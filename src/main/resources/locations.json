@@ -302,6 +302,7 @@
           },
           "delay": 4
         }
+
       ],
       "items": [
         {
@@ -347,6 +348,14 @@
             "maximum": 1
           },
           "delay": 12
+        },
+	{
+          "id": "GOD_OF_DEATH",
+          "population": {
+            "minimum": 1,
+            "maximum": 1
+          },
+          "delay": 4
         },
         {
           "id": "GHOUL",

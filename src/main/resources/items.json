@@ -1158,6 +1158,27 @@
       "integrityDecrementOnEat": 10
     },
     {
+      "id": "SWORD_OF_GOD",
+      "type": "Weapon",
+      "name": {
+        "singular": "Sword of God"
+      },
+      "rarity": "UNIQUE",
+      "tags": [
+        "WEAPON"
+      ],
+      "integrity": {
+        "current": 1000,
+        "maximum": 1000
+      },
+      "weight": 2.0,
+      "visibility": "30.00%",
+      "decompositionPeriod": "2 years",
+      "damage": 150,
+      "hitRate": "92.00%",
+      "integrityDecrementOnHit": 6
+    },
+    {
       "id": "TOME_OF_HEAL",
       "type": "Book",
       "name": {
