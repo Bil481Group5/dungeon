@@ -207,13 +207,14 @@
       "integrityDecrementOnEat": 10
     },
     {
-      "id": "MUSHROOM",
+      "id": "MAGIC_MUSHROOM",
       "type": "Potion",
       "name": {
         "singular": "Magic Mushroom"
       },
       "rarity": "UNCOMMON",
       "tags": [
+        "WEAPON",
         "DRINKABLE",
         "WEIGHT_PROPORTIONAL_TO_INTEGRITY"
       ],
@@ -222,30 +223,19 @@
         "maximum": 10
       },
       "weight": 0.05,
-      "visibility": "15.00%",
+      "visibility": "100.00%",
       "damage": 0,
-      "hitRate": "00.00%",
-      "integrityDecrementOnHit": 5,
+      "hitRate": "50.00%",
+      "integrityDecrementOnHit": 10,
       "drinkableDoses": 1,
       "drinkableEffects": [
         [
           "HEALING",
-          30
-        ],
-        [
-          "EXTRA_ATTACK",
-          4,
-          "10 hour"
-        ],
-        [
-          "FISHING_PROFICIENCY",
-          "30%",
-          "10 hour"
+          45
         ]
       ],
       "integrityDecrementPerDose": 10
-    },      
-
+    },
     {
       "id": "BEAR_BEEF",
       "type": "Food",

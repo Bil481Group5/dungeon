@@ -28,7 +28,7 @@
           "probability": 0.2
         },
         {
-          "id": "MUSHROOM",
+          "id": "MAGIC_MUSHROOM",
           "probability": 0.190
         }
       ],
@@ -81,7 +81,7 @@
           "probability": 0.1
         },
         {
-          "id": "MUSHROOM",
+          "id": "MAGIC_MUSHROOM",
           "probability": 0.190
         }
       ],
@@ -120,7 +120,7 @@
           "probability": 0.1
         },
         {
-          "id": "MUSHROOM",
+          "id": "MAGIC_MUSHROOM",
           "probability": 0.190
         }
       ],
@@ -199,7 +199,7 @@
           "probability": 0.05
         },
         {
-          "id": "MUSHROOM",
+          "id": "MAGIC_MUSHROOM",
           "probability": 0.190
         }
       ]
@@ -279,7 +279,7 @@
           "probability": 0.05
         },
         {
-          "id": "MUSHROOM",
+          "id": "MAGIC_MUSHROOM",
           "probability": 0.190
         }
       ]
@@ -338,7 +338,7 @@
           "probability": 0.05
         },
         {
-          "id": "MUSHROOM",
+          "id": "MAGIC_MUSHROOM",
           "probability": 0.190
         }
       ]
@@ -396,7 +396,7 @@
           "probability": 0.05
         },
         {
-          "id": "MUSHROOM",
+          "id": "MAGIC_MUSHROOM",
           "probability": 0.190
         }
       ]
@@ -456,7 +456,7 @@
           "probability": 0.05
         },
         {
-          "id": "MUSHROOM",
+          "id": "MAGIC_MUSHROOM",
           "probability": 0.190
         }
       ]
@@ -540,7 +540,7 @@
           "probability": 0.05
         },
         {
-          "id": "MUSHROOM",
+          "id": "MAGIC_MUSHROOM",
           "probability": 0.190
         }
       ]
@@ -624,7 +624,7 @@
           "probability": 0.05
         },
         {
-          "id": "MUSHROOM",
+          "id": "MAGIC_MUSHROOM",
           "probability": 0.190
         }
       ]
@@ -708,7 +708,7 @@
           "probability": 0.1
         },
         {
-          "id": "MUSHROOM",
+          "id": "MAGIC_MUSHROOM",
           "probability": 0.190
         }
       ]
@@ -808,7 +808,7 @@
           "probability": 0.05
         },
         {
-          "id": "MUSHROOM",
+          "id": "MAGIC_MUSHROOM",
           "probability": 0.190
         }
       ]
@@ -892,7 +892,7 @@
           "probability": 0.025
         },
         {
-          "id": "MUSHROOM",
+          "id": "MAGIC_MUSHROOM",
           "probability": 0.190
         }
       ]
@@ -956,7 +956,7 @@
           "probability": 0.8
         },
         {
-          "id": "MUSHROOM",
+          "id": "MAGIC_MUSHROOM",
           "probability": 0.190
         }
       ]
@@ -1023,7 +1023,7 @@
           "probability": 0.3
         },
         {
-          "id": "MUSHROOM",
+          "id": "MAGIC_MUSHROOM",
           "probability": 0.190
         }
       ]
@@ -1087,7 +1087,7 @@
           "probability": 0.3
         },
         {
-          "id": "MUSHROOM",
+          "id": "MAGIC_MUSHROOM",
           "probability": 0.190
         }
       ]
@@ -1146,7 +1146,7 @@
           "probability": 0.4
         },
         {
-          "id": "MUSHROOM",
+          "id": "MAGIC_MUSHROOM",
           "probability": 0.190
         }
       ]
@@ -1222,7 +1222,7 @@
           "probability": 0.05
         },
         {
-          "id": "MUSHROOM",
+          "id": "MAGIC_MUSHROOM",
           "probability": 0.190
         }
       ]

@@ -24,7 +24,7 @@ import java.util.Map;
 public final class SpellData {
 
   private static final Map<Id, Spell> spellMap = new HashMap<>();
-	//Dummy commit by Tolga Acar to add or change a spell
+  //Dummy commit by Tolga Acar to add or change a spell
   static {
     putSpell(new Spell("HEAL", "Heal") {
       private static final int HEALING_VALUE = 10;
