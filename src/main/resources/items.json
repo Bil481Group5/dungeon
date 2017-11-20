@@ -230,8 +230,10 @@
       "drinkableDoses": 1,
       "drinkableEffects": [
         [
-          "HEALING",
-          45
+          "SUPER_EFFECT",
+          45,
+          20,
+          "10 minutes"
         ]
       ],
       "integrityDecrementPerDose": 10

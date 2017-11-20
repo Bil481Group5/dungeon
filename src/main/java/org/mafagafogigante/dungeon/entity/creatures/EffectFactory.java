@@ -24,6 +24,7 @@ public class EffectFactory implements Serializable {
     templates.put(new Id("EXTRA_ATTACK"), new AttackEffectTemplate());
     templates.put(new Id("FISHING_PROFICIENCY"), new FishingProficiencyTemplate());
     templates.put(new Id("WELL_FED"), new WellFedEffectTemplate());
+    templates.put(new Id("SUPER_EFFECT"), new SuperEffectTemplate());
   }
 
   public static EffectFactory getDefaultFactory() {
@@ -96,6 +97,20 @@ public class EffectFactory implements Serializable {
     }
   }
 
+  // Omer Faruk, new effect for super powers.(1.parameter: healing, 2.parameter: extraDamage, 3.parameter: duration)
+  private static class SuperEffectTemplate extends EffectTemplate {
+    private static final long serialVersionUID = Version.MAJOR;
+
+    @Override
+    public Effect instantiate(List<String> parameters) {
+      assertParameterCount(parameters, 3);
+      final int healing = Integer.parseInt(parameters.get(0));
+      final int extraDamage = Integer.parseInt(parameters.get(1));
+      final Duration duration = DungeonTimeParser.parseDuration(parameters.get(2));
+      return new SuperEffect(healing, extraDamage, duration);
+    }
+  }
+
   private static class HealingEffect extends Effect {
     private static final long serialVersionUID = Version.MAJOR;
     private final int healing;
@@ -107,6 +122,26 @@ public class EffectFactory implements Serializable {
     @Override
     public void affect(Creature creature) {
       creature.getHealth().incrementBy(healing);
+    }
+  }
+
+  private static class SuperEffect extends Effect {
+    private static final long serialVersionUID = Version.MAJOR;
+    private final int healing;
+    private final Duration duration;
+    private final int extraDamage;
+
+    SuperEffect(int healing, int extraDamage, Duration duration) {
+      this.healing = healing;
+      this.extraDamage = extraDamage;
+      this.duration = duration;
+    }
+
+    @Override
+    public void affect(Creature creature) {
+      creature.getHealth().incrementBy(healing);
+      AttackEffect af = new AttackEffect(duration, extraDamage);
+      af.affect(creature);
     }
   }
 

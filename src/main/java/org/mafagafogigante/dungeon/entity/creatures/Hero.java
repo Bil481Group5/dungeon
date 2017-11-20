@@ -616,6 +616,12 @@ public class Hero extends Creature {
       text.append(String.valueOf(selectedItem.getWeaponComponent().getHitRate()));
       text.append(".");
       text.append("\n");
+      if ( selectedItem.getQualifiedName().equals("Magic Mushroom")) {
+        text.append("The effects this drinkable gives you are ");  
+        text.append("HEALING ");
+        text.append("and ");
+        text.append("EXTRA DAMAGE");   
+      }
       Writer.write(text);
     }
   }
