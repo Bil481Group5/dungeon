@@ -427,7 +427,11 @@ public class Hero extends Creature {
     DungeonString text = new DungeonString("You are carrying:");
     text.append("\n");
     for (Item item : getInventory().getItems()) {
-      text.setColor(item.getRarity().getColor());
+      if (item.getQualifiedName().equals("Magic Mushroom")) {
+        text.setColor(Color.CYAN);
+      } else { 
+        text.setColor(item.getRarity().getColor());
+      }
       if (hasWeapon() && getWeapon() == item) {
         text.append(" [Equipped]");
       }
@@ -569,7 +573,11 @@ public class Hero extends Creature {
     Item selectedItem = selectInventoryItem(arguments);
     if (selectedItem != null) {
       DungeonString text = new DungeonString();
-      text.setColor(selectedItem.getRarity().getColor());
+      if (selectedItem.getQualifiedName().equals("Magic Mushroom")) {
+        text.setColor(Color.CYAN);
+      } else { 
+        text.setColor(selectedItem.getRarity().getColor());
+      }
       text.append(selectedItem.getQualifiedName());
       text.append(" ");
       text.append("(");
