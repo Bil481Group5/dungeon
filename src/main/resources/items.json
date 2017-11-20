@@ -1253,6 +1253,29 @@
       "spell": "DISPLACE"
     },
     {
+      "id": "GOD_OF_THUNDER",
+      "type": "Book",
+      "name": {
+        "singular": "God of Thunder"
+      },
+      "rarity": "COMMON",
+      "tags": [
+        "WEAPON",
+        "BOOK"
+      ],
+      "integrity": {
+        "current": 20,
+        "maximum": 20
+      },
+      "weight": 0.7,
+      "visibility": "80.00%",
+      "damage": 12,
+      "hitRate": "90.00%",
+      "integrityDecrementOnHit": 7,
+      "text": "The God of Thunder spell brings you the health of The God of Thunder.",
+      "spell": "GOD_OF_THUNDER"
+    },
+    {
       "id": "HISTORY_OF_THE_THIRD_ERA",
       "type": "Book",
       "name": {

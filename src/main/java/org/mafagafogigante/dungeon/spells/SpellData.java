@@ -8,6 +8,7 @@ import org.mafagafogigante.dungeon.game.BlockedEntrances;
 import org.mafagafogigante.dungeon.game.Direction;
 import org.mafagafogigante.dungeon.game.DungeonString;
 import org.mafagafogigante.dungeon.game.Engine;
+import org.mafagafogigante.dungeon.game.Game;
 import org.mafagafogigante.dungeon.game.Id;
 import org.mafagafogigante.dungeon.game.Location;
 import org.mafagafogigante.dungeon.game.Point;
@@ -186,6 +187,22 @@ public final class SpellData {
         }
       }
     });
+    if (Game.getGameState().getHero().getWeapon().getQualifiedName().equals("God of Thunder")) {
+      putSpell(new Spell("GOD_OF_THUNDER", "God of Thunder") {
+        private static final int UPGRADE_HEALTH = 100;
+        private static final int SECONDS_TO_CAST_UPGRADE = 27;
+      
+        @Override
+        public void operate(Hero hero, String[] targetMatcher) {
+          if (targetMatcher.length == 0 && hero.getWeapon() != null) {
+            Engine.rollDateAndRefresh(SECONDS_TO_CAST_UPGRADE);
+            hero.addHealth(UPGRADE_HEALTH);
+          } else {
+            Writer.write("You are not equipping anything.");
+          }
+        }
+      });
+    }
     putSpell(new Spell("DISPLACE", "Displace") {
 
       static final int SECONDS_TO_CAST_DISPLACE = 15;

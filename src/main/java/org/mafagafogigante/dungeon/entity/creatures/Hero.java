@@ -87,6 +87,7 @@ public class Hero extends Creature {
     this.achievementTracker = new AchievementTracker(statistics);
     this.dateOfBirth = dateOfBirth;
     this.battleLog = new SimpleBattleLog();
+
   }
 
   private static int nextRandomTimeChunk() {
@@ -109,7 +110,7 @@ public class Hero extends Creature {
    * Increments the Hero's health by a certain amount, without exceeding its maximum health. If at the end the Hero is
    * completely healed, a messaging about this is written.
    */
-  private void addHealth(int amount) {
+  public void addHealth(int amount) {
     getHealth().incrementBy(amount);
     statistics.getHeroStatistics().incrementHealingThroughEating(amount);
     if (getHealth().isFull()) {
