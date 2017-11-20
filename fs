@@ -1,3 +1,46 @@
+commit 7b9f3e0e982814cb5158db646a65b470141418fe
+Merge: 055e90b fba427c
+Author: Furkan Fatih Arslan <arslanffatih@gmail.com>
+Date:   Tue Nov 21 00:05:20 2017 +0300
+
+    Merge branch 'master' of https://github.com/Bil481Group5/dungeon
+
+commit 055e90b07184783c86be496257240d84f40529bc
+Author: Furkan Fatih Arslan <arslanffatih@gmail.com>
+Date:   Tue Nov 21 00:02:50 2017 +0300
+
+    heronun mape bakisi degistirildi
+
+commit fba427cef4382070c5063bd0f74aa7c86cc2787e
+Author: kurular4 <kurular4@gmail.com>
+Date:   Mon Nov 20 17:14:28 2017 +0300
+
+    little changes
+
+commit b2352c84a7e7c09e0f1b9135a21b3b630a0d0855
+Author: bekirberksenel <bekirberksenel2701@gmail.com>
+Date:   Mon Nov 20 16:25:19 2017 +0300
+
+    Sword of God itemi alininca acilacak buyu icin mesaj eklendi
+
+commit 2bb951a52a07b95360dd22b65c542dbc17e4847a
+Author: bekirberksenel <bekirberksenel2701@gmail.com>
+Date:   Mon Nov 20 16:08:32 2017 +0300
+
+    Yeni spell ve spelli kullanma sarti eklendi, json dosyalari guncellendi.
+
+commit d77d06b0d5bff844e4dc0620d55e8a5fb73593ce
+Author: TolgaAcar <tolgacarr@gmail.com>
+Date:   Mon Nov 20 14:17:03 2017 +0300
+
+    changing an items drop
+
+commit dd6e221972d7b262f30bcd6751b7dd3575fab149
+Author: bekirberksenel <bekirberksenel2701@gmail.com>
+Date:   Mon Nov 20 13:33:28 2017 +0300
+
+    God of Death guncellendi
+
 [33mcommit 88b1a9d163ab470241c7d1f303b423dd5896054c[m
 Author: kurular4 <kurular4@gmail.com>
 Date:   Mon Nov 20 13:27:12 2017 +0300
