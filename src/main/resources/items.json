@@ -1078,11 +1078,11 @@
         "maximum": 1000
       },
       "weight": 2.0,
-      "visibility": "30.00%",
+      "visibility": "70.00%",
       "decompositionPeriod": "2 years",
       "damage": 150,
       "hitRate": "92.00%",
-      "integrityDecrementOnHit": 6
+      "integrityDecrementOnHit": 50
     },
     {
       "id": "TOME_OF_HEAL",
