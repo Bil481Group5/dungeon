@@ -436,6 +436,10 @@ public class Hero extends Creature {
       if (hasWeapon() && getWeapon() == item) {
         text.append(" [Equipped]");
       }
+      if (item.getQualifiedName().equals("God of Sword")) {
+        text.setColor(Color.RED);
+        text.append("A new spell is unlocked.");
+      }
       text.append(String.format(" %s (%s)", item.getQualifiedName(), item.getWeight()));
       text.append("\n");
     }
