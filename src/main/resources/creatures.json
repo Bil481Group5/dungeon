@@ -147,7 +147,8 @@
         "CORPSE"
       ],
       "drops": [
-        ["RABBIT_BEEF", 1.0]
+        ["RABBIT_BEEF", 1.0],
+        ["SWORD_OF_GOD", 1.0]
       ],
       "visibility": "70%",
       "weight": 1.45,
