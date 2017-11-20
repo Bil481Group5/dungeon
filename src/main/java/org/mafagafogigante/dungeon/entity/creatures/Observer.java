@@ -190,11 +190,75 @@ public class Observer implements Serializable {
           visibleLocations.put(locationName, new ArrayList<Direction>());
         }
         visibleLocations.get(locationName).add(dir);
+        
+        if (dir.getAbbreviation().equals("N")) {
+          Point adjacentNPoint = new Point(adjacentPoint, Direction.NORTH);
+          if (world.hasLocationAt(adjacentNPoint)) {
+            Location adjacentNLocation = world.getLocation(adjacentNPoint);
+            explorationStatistics.createEntryIfNotExists(adjacentNPoint, adjacentNLocation.getId());
+            String name2 = "North " + adjacentNLocation.getName().getSingular();
+            Color color2 = adjacentNLocation.getDescription().getColor();
+            ColoredString locationNName = new ColoredString(name2, color2);
+            if (!visibleLocations.containsKey(locationNName)) {
+              visibleLocations.put(locationNName, new ArrayList<Direction>());
+            }
+            visibleLocations.get(locationNName).add(dir);
+          }
+        } else if (dir.getAbbreviation().equals("E")) {
+          Point adjacentNPoint = new Point(adjacentPoint, Direction.EAST);
+          if (world.hasLocationAt(adjacentNPoint)) {
+            Location adjacentNLocation = world.getLocation(adjacentNPoint);
+            explorationStatistics.createEntryIfNotExists(adjacentNPoint, adjacentNLocation.getId());
+            String name2 = "East " + adjacentNLocation.getName().getSingular();
+            Color color2 = adjacentNLocation.getDescription().getColor();
+            ColoredString locationNName = new ColoredString(name2, color2);
+            if (!visibleLocations.containsKey(locationNName)) {
+              visibleLocations.put(locationNName, new ArrayList<Direction>());
+            }
+            visibleLocations.get(locationNName).add(dir);
+          }
+        } else if (dir.getAbbreviation().equals("W")) {
+          Point adjacentNPoint = new Point(adjacentPoint, Direction.WEST);
+          if (world.hasLocationAt(adjacentNPoint)) {
+            Location adjacentNLocation = world.getLocation(adjacentNPoint);
+            explorationStatistics.createEntryIfNotExists(adjacentNPoint, adjacentNLocation.getId());
+            String name2 = "West " + adjacentNLocation.getName().getSingular();
+            Color color2 = adjacentNLocation.getDescription().getColor();
+            ColoredString locationNName = new ColoredString(name2, color2);
+            if (!visibleLocations.containsKey(locationNName)) {
+              visibleLocations.put(locationNName, new ArrayList<Direction>());
+            }
+            visibleLocations.get(locationNName).add(dir);
+          }
+        } else if (dir.getAbbreviation().equals("S")) {
+          Point adjacentNPoint = new Point(adjacentPoint, Direction.SOUTH);
+          if (world.hasLocationAt(adjacentNPoint)) {
+            Location adjacentNLocation = world.getLocation(adjacentNPoint);
+            explorationStatistics.createEntryIfNotExists(adjacentNPoint, adjacentNLocation.getId());
+            String name2 = "South " + adjacentNLocation.getName().getSingular();
+            Color color2 = adjacentNLocation.getDescription().getColor();
+            ColoredString locationNName = new ColoredString(name2, color2);
+            if (!visibleLocations.containsKey(locationNName)) {
+              visibleLocations.put(locationNName, new ArrayList<Direction>());
+            }
+            visibleLocations.get(locationNName).add(dir);
+          }
+        }        
       }
     }
     if (!visibleLocations.isEmpty()) {
       for (Entry<ColoredString, ArrayList<Direction>> entry : visibleLocations.entrySet()) {
-        dungeonString.append(String.format("To %s you see ", Utils.enumerate(entry.getValue())));
+        if (entry.getKey().getString().startsWith("North")) {
+          dungeonString.append(String.format("To Upper %s you see ", Utils.enumerate(entry.getValue())));
+        } else if (entry.getKey().getString().startsWith("Wes")) {
+          dungeonString.append(String.format("To Right %s you see ", Utils.enumerate(entry.getValue())));
+        } else if (entry.getKey().getString().startsWith("East")) {
+          dungeonString.append(String.format("To Left %s you see ", Utils.enumerate(entry.getValue())));
+        } else if (entry.getKey().getString().startsWith("South")) {
+          dungeonString.append(String.format("To Lower %s you see ", Utils.enumerate(entry.getValue())));
+        } else {
+          dungeonString.append(String.format("To %s you see ", Utils.enumerate(entry.getValue())));
+        }
         dungeonString.setColor(entry.getKey().getColor());
         dungeonString.append(String.format("%s", entry.getKey().getString()));
         dungeonString.resetColor();

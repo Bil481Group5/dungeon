@@ -59,4 +59,8 @@ public enum Direction {
     return name;
   }
 
+  public String getAbbreviation() {
+    return abbreviation;
+  }
+
 }
