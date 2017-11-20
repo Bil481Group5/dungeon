@@ -230,8 +230,10 @@
       "drinkableDoses": 1,
       "drinkableEffects": [
         [
-          "HEALING",
-          45
+          "SUPER_EFFECT",
+          45,
+          20,
+          "10 minutes"
         ]
       ],
       "integrityDecrementPerDose": 10
@@ -1078,11 +1080,11 @@
         "maximum": 1000
       },
       "weight": 2.0,
-      "visibility": "30.00%",
+      "visibility": "70.00%",
       "decompositionPeriod": "2 years",
       "damage": 150,
       "hitRate": "92.00%",
-      "integrityDecrementOnHit": 6
+      "integrityDecrementOnHit": 50
     },
     {
       "id": "TOME_OF_HEAL",
@@ -1251,6 +1253,29 @@
       "integrityDecrementOnHit": 4,
       "text": "The Displace spell allows the caster to manipulate the magic that permeates the world and displace a creature to a random adjacent location.",
       "spell": "DISPLACE"
+    },
+    {
+      "id": "GOD_OF_THUNDER",
+      "type": "Book",
+      "name": {
+        "singular": "God of Thunder"
+      },
+      "rarity": "COMMON",
+      "tags": [
+        "WEAPON",
+        "BOOK"
+      ],
+      "integrity": {
+        "current": 20,
+        "maximum": 20
+      },
+      "weight": 0.7,
+      "visibility": "80.00%",
+      "damage": 12,
+      "hitRate": "90.00%",
+      "integrityDecrementOnHit": 7,
+      "text": "The God of Thunder spell brings you the health of The God of Thunder.",
+      "spell": "GOD_OF_THUNDER"
     },
     {
       "id": "HISTORY_OF_THE_THIRD_ERA",

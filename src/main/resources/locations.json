@@ -172,6 +172,14 @@
         "U"
       ],
       "spawners": [
+       	{
+          "id": "GOD_OF_DEATH",
+          "population": {
+            "minimum": 1,
+            "maximum": 1
+          },
+          "delay": 10
+        },
         {
           "id": "FROG",
           "population": {
@@ -244,6 +252,14 @@
       "blockedEntrances": [
       ],
       "spawners": [
+	{
+          "id": "GOD_OF_DEATH",
+          "population": {
+            "minimum": 1,
+            "maximum": 1
+          },
+          "delay": 10
+        },
         {
           "id": "FROG",
           "population": {
@@ -302,6 +318,14 @@
       "blockedEntrances": [
       ],
       "spawners": [
+	{
+          "id": "GOD_OF_DEATH",
+          "population": {
+            "minimum": 1,
+            "maximum": 1
+          },
+          "delay": 10
+        },        
         {
           "id": "SKELETON",
           "population": {
@@ -361,6 +385,14 @@
       "blockedEntrances": [
       ],
       "spawners": [
+	{
+          "id": "GOD_OF_DEATH",
+          "population": {
+            "minimum": 1,
+            "maximum": 1
+          },
+          "delay": 10
+        },        
         {
           "id": "RADIANT_GHOUL",
           "population": {
@@ -375,7 +407,7 @@
             "minimum": 1,
             "maximum": 1
           },
-          "delay": 4
+          "delay": 10
         },
         {
           "id": "GHOUL",
@@ -421,6 +453,14 @@
         "D"
       ],
       "spawners": [
+	{
+          "id": "GOD_OF_DEATH",
+          "population": {
+            "minimum": 1,
+            "maximum": 1
+          },
+          "delay": 10
+        },
         {
           "id": "FROG",
           "population": {
@@ -481,6 +521,14 @@
         "D"
       ],
       "spawners": [
+	{
+          "id": "GOD_OF_DEATH",
+          "population": {
+            "minimum": 1,
+            "maximum": 1
+          },
+          "delay": 10
+        },
         {
           "id": "FOX",
           "population": {
@@ -565,6 +613,14 @@
         "D"
       ],
       "spawners": [
+	{
+          "id": "GOD_OF_DEATH",
+          "population": {
+            "minimum": 1,
+            "maximum": 1
+          },
+          "delay": 10
+        },
         {
           "id": "BOAR",
           "population": {
@@ -649,6 +705,14 @@
         "D"
       ],
       "spawners": [
+	{
+          "id": "GOD_OF_DEATH",
+          "population": {
+            "minimum": 1,
+            "maximum": 1
+          },
+          "delay": 10
+        },
         {
           "id": "BEAR",
           "population": {
@@ -733,6 +797,14 @@
         "D"
       ],
       "spawners": [
+	{
+          "id": "GOD_OF_DEATH",
+          "population": {
+            "minimum": 1,
+            "maximum": 1
+          },
+          "delay": 10
+        },
         {
           "id": "FROG",
           "population": {
@@ -833,6 +905,14 @@
         "D"
       ],
       "spawners": [
+	{
+          "id": "GOD_OF_DEATH",
+          "population": {
+            "minimum": 1,
+            "maximum": 1
+          },
+          "delay": 10
+        },
         {
           "id": "RADIANT_GHOUL",
           "population": {
@@ -917,6 +997,14 @@
         "D"
       ],
       "spawners": [
+	{
+          "id": "GOD_OF_DEATH",
+          "population": {
+            "minimum": 1,
+            "maximum": 1
+          },
+          "delay": 10
+        },
         {
           "id": "WHITE_TIGER",
           "population": {
@@ -981,6 +1069,14 @@
         "D"
       ],
       "spawners": [
+	{
+          "id": "GOD_OF_DEATH",
+          "population": {
+            "minimum": 1,
+            "maximum": 1
+          },
+          "delay": 10
+        },
         {
           "id": "CROCODILE",
           "population": {
@@ -1048,6 +1144,14 @@
         "D"
       ],
       "spawners": [
+	{
+          "id": "GOD_OF_DEATH",
+          "population": {
+            "minimum": 1,
+            "maximum": 1
+          },
+          "delay": 10
+        },
         {
           "id": "BOAR",
           "population": {
@@ -1112,6 +1216,14 @@
         "D"
       ],
       "spawners": [
+	{
+          "id": "GOD_OF_DEATH",
+          "population": {
+            "minimum": 1,
+            "maximum": 1
+          },
+          "delay": 10
+        },
         {
           "id": "CROCODILE",
           "population": {
@@ -1171,6 +1283,14 @@
         "D"
       ],
       "spawners": [
+	{
+          "id": "GOD_OF_DEATH",
+          "population": {
+            "minimum": 1,
+            "maximum": 1
+          },
+          "delay": 10
+        },
         {
           "id": "GIANT_RAT",
           "population": {

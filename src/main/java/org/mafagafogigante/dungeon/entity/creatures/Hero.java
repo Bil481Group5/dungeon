@@ -87,6 +87,7 @@ public class Hero extends Creature {
     this.achievementTracker = new AchievementTracker(statistics);
     this.dateOfBirth = dateOfBirth;
     this.battleLog = new SimpleBattleLog();
+
   }
 
   private static int nextRandomTimeChunk() {
@@ -109,7 +110,7 @@ public class Hero extends Creature {
    * Increments the Hero's health by a certain amount, without exceeding its maximum health. If at the end the Hero is
    * completely healed, a messaging about this is written.
    */
-  private void addHealth(int amount) {
+  public void addHealth(int amount) {
     getHealth().incrementBy(amount);
     statistics.getHeroStatistics().incrementHealingThroughEating(amount);
     if (getHealth().isFull()) {
@@ -427,9 +428,17 @@ public class Hero extends Creature {
     DungeonString text = new DungeonString("You are carrying:");
     text.append("\n");
     for (Item item : getInventory().getItems()) {
-      text.setColor(item.getRarity().getColor());
+      if (item.getQualifiedName().equals("Magic Mushroom")) {
+        text.setColor(Color.CYAN);
+      } else { 
+        text.setColor(item.getRarity().getColor());
+      }
       if (hasWeapon() && getWeapon() == item) {
         text.append(" [Equipped]");
+      }
+      if (item.getQualifiedName().equals("God of Sword")) {
+        text.setColor(Color.RED);
+        text.append("A new spell is unlocked.");
       }
       text.append(String.format(" %s (%s)", item.getQualifiedName(), item.getWeight()));
       text.append("\n");
@@ -569,7 +578,11 @@ public class Hero extends Creature {
     Item selectedItem = selectInventoryItem(arguments);
     if (selectedItem != null) {
       DungeonString text = new DungeonString();
-      text.setColor(selectedItem.getRarity().getColor());
+      if (selectedItem.getQualifiedName().equals("Magic Mushroom")) {
+        text.setColor(Color.CYAN);
+      } else { 
+        text.setColor(selectedItem.getRarity().getColor());
+      }
       text.append(selectedItem.getQualifiedName());
       text.append(" ");
       text.append("(");
@@ -603,6 +616,12 @@ public class Hero extends Creature {
       text.append(String.valueOf(selectedItem.getWeaponComponent().getHitRate()));
       text.append(".");
       text.append("\n");
+      if ( selectedItem.getQualifiedName().equals("Magic Mushroom")) {
+        text.append("The effects this drinkable gives you are ");  
+        text.append("HEALING ");
+        text.append("and ");
+        text.append("EXTRA DAMAGE");   
+      }
       Writer.write(text);
     }
   }

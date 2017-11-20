@@ -35,6 +35,10 @@ public class DrinkableComponent implements Serializable {
     }
   }
 
+  public List<Effect> getEffects() {
+    return effects;
+  }
+
   public boolean isDepleted() {
     return doses == 0;
   }
