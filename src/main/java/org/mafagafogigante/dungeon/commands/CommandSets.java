@@ -147,15 +147,6 @@ final class CommandSets {
       @Override//kullanici go ile 4 yonden birine gittiginde gorunebilecek bolge sayisi degiscek.
       public void execute(@NotNull String[] arguments) {
         Game.getGameState().getHero().walk(arguments);
-        //kullanıcı mushroom ile karşılaşınca otomatik olarak etkilenecek, Omer Faruk 
-        //for (Item specialItem : Game.getGameState().getHero().getLocation().getItemList()) {
-          //if (specialItem.getQualifiedName().equals("Magic Mushroom")) {
-            //String[] it = {"MAGIC_MUSHROOM"};
-            //Game.getGameState().getHero().pickItems(it);
-            //Writer.write("You found a mushroom and you got affected");
-            //Game.getGameState().getHero().drinkItem(it);
-          //}
-        //} 
       }
     });
     commandSet.addCommand(new Command("items", "Lists the items in the character's inventory.") {

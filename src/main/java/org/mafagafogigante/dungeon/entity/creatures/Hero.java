@@ -118,6 +118,10 @@ public class Hero extends Creature {
     }
   }
 
+  public void reduceHealth(int amount) {
+    getHealth().decrementBy(amount);
+  }
+
   /**
    * Rests until the hero is considered to be rested.
    */
@@ -174,6 +178,38 @@ public class Hero extends Creature {
     } else {
       Writer.write("You can only sleep at night.");
     }
+  }
+
+ /**
+   * Sleep until the sun rises.
+   *
+   * <p>Depending on how much the Hero will sleep, this method may print a few dreams.
+   */
+  public void sleepTimeIndependent() {
+    int seconds;
+    World world = getLocation().getWorld();
+    Writer.write("You fall asleep.");
+    seconds = PartOfDay.getSecondsToNext(world.getWorldDate(), PartOfDay.DAWN);
+    // In order to increase realism, add some time for the time it would take to wake up exactly at dawn.
+    seconds += nextRandomTimeChunk();
+    statistics.getHeroStatistics().incrementSleepingTime(seconds);
+    while (seconds > 0) {
+      final int cycleDuration = Math.min(DREAM_DURATION_IN_SECONDS, seconds);
+      Engine.rollDateAndRefresh(cycleDuration);
+      // Cast to long because it is considered best practice. We are going to end with a long anyway, so start doing
+      // long arithmetic at the first multiplication. Reported by ICAST_INTEGER_MULTIPLY_CAST_TO_LONG in FindBugs.
+      long timeForSleep = (long) MILLISECONDS_TO_SLEEP_AN_HOUR * cycleDuration / HOUR.as(SECOND);
+      Sleeper.sleep(timeForSleep);
+      if (cycleDuration == DREAM_DURATION_IN_SECONDS) {
+        Writer.write(Libraries.getDreamLibrary().next());
+      }
+      seconds -= cycleDuration;
+      if (!getHealth().isFull()) {
+        int healing = getHealth().getMaximum() * cycleDuration / SECONDS_TO_REGENERATE_FULL_HEALTH;
+        getHealth().incrementBy(healing);
+      }
+    }
+    Writer.write("You wake up.");
   }
 
   /**
@@ -519,26 +555,47 @@ public class Hero extends Creature {
   public void drinkItem(String[] arguments) {
     Item selectedItem = selectInventoryItem(arguments);
     if (selectedItem != null) {
-      if (selectedItem.hasTag(Item.Tag.DRINKABLE)) {
-        Engine.rollDateAndRefresh(SECONDS_TO_DRINK_AN_ITEM);
-        if (getInventory().hasItem(selectedItem)) {
+      if (selectedItem.getQualifiedName().equals("Magic Mushroom")) {
+        int randomEffect = Random.nextInteger(101);
+        if (randomEffect < 15) {
+          Writer.write("SIDE EFFECT! Mushroom caused to sleep");
+          sleepTimeIndependent();
+        } else if (15 < randomEffect && randomEffect < 30) {
+          Writer.write("SIDE EFFECT! Health reduced, and this may cause to death");
+          reduceHealth(20);
+        } else if (30 < randomEffect && randomEffect < 101) {
+          Engine.rollDateAndRefresh(SECONDS_TO_DRINK_AN_ITEM);
           DrinkableComponent component = selectedItem.getDrinkableComponent();
-          if (!component.isDepleted()) {
-            component.affect(this);
-            if (component.isDepleted()) {
-              Writer.write("You drank the last dose of " + selectedItem.getName() + ".");
+          component.affect(this);
+          Writer.write("You now have the followings under Super Power Effects");
+          Writer.write("20 Extra Attack");
+          Writer.write("45 more health");
+          Writer.write("The attack effect last for 10 minutes");
+          selectedItem.decrementIntegrityByDrinking();
+          HeroUtils.writeNoLongerInInventoryMessage(selectedItem);
+        } 
+      } else { 
+        if (selectedItem.hasTag(Item.Tag.DRINKABLE)) {
+          Engine.rollDateAndRefresh(SECONDS_TO_DRINK_AN_ITEM);
+          if (getInventory().hasItem(selectedItem)) {
+            DrinkableComponent component = selectedItem.getDrinkableComponent();
+            if (!component.isDepleted()) {
+              component.affect(this);
+              if (component.isDepleted()) {
+                Writer.write("You drank the last dose of " + selectedItem.getName() + ".");
+              } else {
+                Writer.write("You drank a dose of " + selectedItem.getName() + ".");
+              }
+              selectedItem.decrementIntegrityByDrinking();
             } else {
-              Writer.write("You drank a dose of " + selectedItem.getName() + ".");
+              Writer.write("This item is depleted.");
             }
-            selectedItem.decrementIntegrityByDrinking();
           } else {
-            Writer.write("This item is depleted.");
+            HeroUtils.writeNoLongerInInventoryMessage(selectedItem);
           }
         } else {
-          HeroUtils.writeNoLongerInInventoryMessage(selectedItem);
+          Writer.write("This item is not drinkable.");
         }
-      } else {
-        Writer.write("This item is not drinkable.");
       }
     }
   }
