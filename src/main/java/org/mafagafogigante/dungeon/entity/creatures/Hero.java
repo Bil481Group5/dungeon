@@ -65,12 +65,14 @@ public class Hero extends Creature {
   private static final int SECONDS_TO_EQUIP = 6;
   private static final int SECONDS_TO_FISH = 60;
   private static final int SECONDS_TO_MILK_A_CREATURE = 45;
+  private static final int SECONDS_TO_SHEAR_A_CREATURE = 45;
   private static final int SECONDS_TO_READ_EQUIPPED_CLOCK = 4;
   private static final int SECONDS_TO_READ_UNEQUIPPED_CLOCK = 10;
   private static final double MAXIMUM_HEALTH_THROUGH_REST = 0.6;
   private static final int SECONDS_TO_REGENERATE_FULL_HEALTH = 30000; // 500 minutes (or 8 hours and 20 minutes).
   private static final int MILK_NUTRITION = 12;
   private static final Id FISH_ID = new Id("FISH");
+  private static final Id WOOL_ID = new Id("GOAT_WOOL");
   private static final Id WELL_FED_ID = new Id("WELL_FED");
   private static final List<String> WELL_FED_LIST = Collections.emptyList();
   private static final Effect WELL_FED_EFFECT = EffectFactory.getDefaultFactory().getEffect(WELL_FED_ID, WELL_FED_LIST);
@@ -597,6 +599,42 @@ public class Hero extends Creature {
           Writer.write("This item is not drinkable.");
         }
       }
+    }
+  }
+  /**
+  * The method that enables a Hero to shear goat and gather wool.
+  */
+  public void parseShear(String[] arguments) {
+    if (arguments.length != 0) { // Specified which creature to shear.
+      Creature selectedCreature = selectTarget(arguments); // Finds the best match for the specified arguments.
+      if (selectedCreature != null) {
+        if (selectedCreature.hasTag(Creature.Tag.SHEARED)) {
+          shear(selectedCreature);
+        } else {
+          Writer.write("This creature is not a goat to shear.");
+        }
+      }
+    }
+  }
+  /**
+  * The method that enables a Hero to shear goat and gather wool.
+  */
+  private void shear(Creature creature) {
+    Writer.write("You started shearing a goat.");
+    Engine.rollDateAndRefresh(SECONDS_TO_SHEAR_A_CREATURE);
+    Sleeper.sleep(SECONDS_TO_SHEAR_A_CREATURE);
+    Writer.write("You gather goat wool!");
+    World world = getLocation().getWorld();
+    Item item = world.getItemFactory().makeItem(WOOL_ID, world.getWorldDate());
+    SimulationResult result = getInventory().simulateItemAddition(item);
+    if (result == SimulationResult.AMOUNT_LIMIT) {
+      Writer.write("Your inventory is full, you decide to drop the wool in the ground.");
+      getLocation().getInventory().addItem(item);
+    } else if (result == SimulationResult.WEIGHT_LIMIT) {
+      Writer.write("You can't carry more weight, you decide to drop the wool in the ground.");
+      getLocation().getInventory().addItem(item);
+    } else if (result == SimulationResult.SUCCESSFUL) {
+      getInventory().addItem(item);
     }
   }
 

@@ -291,6 +291,6 @@ public class Creature extends Entity {
     return visible;
   }
 
-  public enum Tag {MILKABLE, CORPSE}
+  public enum Tag {MILKABLE, CORPSE, SHEARED}
 
 }

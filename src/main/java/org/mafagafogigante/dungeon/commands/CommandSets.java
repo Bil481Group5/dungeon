@@ -226,6 +226,12 @@ final class CommandSets {
         SavesTableWriter.writeSavesFolderTable();
       }
     });
+    commandSet.addCommand(new Command("shear", "Shear the goat and returns Cashmere wool") {  
+      @Override
+      public void execute(@NotNull String[] arguments) {
+        Game.getGameState().getHero().parseShear(arguments);
+      }
+    });
     commandSet.addCommand(new Command("sleep", "Sleeps until the sun rises.") {
       @Override
       public void execute(@NotNull String[] arguments) {

@@ -577,6 +577,32 @@
       "nutrition": 8,
       "integrityDecrementOnEat": 10
     },
+	{
+      "id": "GOAT_WOOL",
+      "type": "Food",
+      "name": {
+        "singular": "Goat Wool"
+      },
+      "rarity": "COMMON",
+      "tags": [
+        "WEAPON",
+        "FOOD",
+        "DECOMPOSES",
+        "WEIGHT_PROPORTIONAL_TO_INTEGRITY"
+      ],
+      "integrity": {
+        "current": 20,
+        "maximum": 20
+      },
+      "weight": 1.5,
+      "visibility": "60.00%",
+      "decompositionPeriod": "3 day",
+      "damage": 4,
+      "hitRate": "45.00%",
+      "integrityDecrementOnHit": 5,
+      "nutrition": 8,
+      "integrityDecrementOnEat": 10
+    },
     {
       "id": "AXE",
       "type": "Weapon",
