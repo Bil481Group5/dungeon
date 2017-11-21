@@ -232,6 +232,28 @@
       "attack": 4,
       "attackAlgorithmID": "SIMPLE"
     },
+	{
+	  "id": "GOAT",
+      "type": "Beast",
+      "name": {
+        "singular": "Goat"
+      },
+      "tags": [
+        "MILKABLE",
+        "CORPSE"
+      ],
+      "drops": [
+        ["GOAT_BEEF", 1.0],
+        ["GOAT_BEEF", 0.9],
+        ["GOAT_BEEF", 0.8],
+        ["GOAT_BEEF", 0.7]
+      ],
+      "visibility": "70%",
+      "weight": 400.0,
+      "health": 40,
+      "attack": 2,
+      "attackAlgorithmID": "SIMPLE"
+    },
     {
       "id": "CROCODILE",
       "type": "Beast",

@@ -420,6 +420,32 @@
       "nutrition": 8,
       "integrityDecrementOnEat": 10
     },
+	{
+      "id": "GOAT_BEEF",
+      "type": "Food",
+      "name": {
+        "singular": "Goat Beef"
+      },
+      "rarity": "COMMON",
+      "tags": [
+        "WEAPON",
+        "FOOD",
+        "DECOMPOSES",
+        "WEIGHT_PROPORTIONAL_TO_INTEGRITY"
+      ],
+      "integrity": {
+        "current": 30,
+        "maximum": 30
+      },
+      "weight": 1.0,
+      "visibility": "70.00%",
+      "decompositionPeriod": "3 days",
+      "damage": 1,
+      "hitRate": "45.00%",
+      "integrityDecrementOnHit": 5,
+      "nutrition": 8,
+      "integrityDecrementOnEat": 7
+    },
     {
       "id": "FOX_BEEF",
       "type": "Food",
