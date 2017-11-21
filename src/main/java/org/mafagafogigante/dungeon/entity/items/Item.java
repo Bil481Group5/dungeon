@@ -35,6 +35,9 @@ public final class Item extends Entity {
   private BookComponent bookComponent;
   /* The Inventory this Item is in. Should be null whenever this Item is not in an Inventory. */
   private BaseInventory inventory;
+  private int extraAttack;
+  private int heal;
+  private String duration;
 
   /**
    * Constructs a new Item from the provided preset and with the specified creation date.
@@ -70,8 +73,25 @@ public final class Item extends Entity {
     for (Id enchantmentId : preset.getEnchantmentRules().randomRoll()) {
       weaponComponent.getEnchantments().add(enchantmentFactory.makeEnchantment(enchantmentId));
     }
+    if (preset.getId().toString().equals("MAGIC_MUSHROOM")) { 
+      heal = preset.getHeal();
+      extraAttack = preset.getExtraAttack();
+      duration = preset.getDuration();
+    }
+  }
+  
+  public int getHeal() {
+    return heal; 
   }
 
+  public int getExtraAttack() {
+    return extraAttack; 
+  }
+ 
+  public String getDuration() {
+    return duration; 
+  }
+  
   public Rarity getRarity() {
     return rarity;
   }

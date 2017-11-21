@@ -558,21 +558,25 @@ public class Hero extends Creature {
     Item selectedItem = selectInventoryItem(arguments);
     if (selectedItem != null) {
       if (selectedItem.getQualifiedName().equals("Magic Mushroom")) {
-        int randomEffect = Random.nextInteger(101);
-        if (randomEffect < 15) {
+        int randomEffect = Random.nextInteger(99);
+        if (randomEffect < 20) {
           Writer.write("SIDE EFFECT! Mushroom caused to sleep");
+          selectedItem.decrementIntegrityByDrinking();
+          HeroUtils.writeNoLongerInInventoryMessage(selectedItem);
           sleepTimeIndependent();
-        } else if (15 < randomEffect && randomEffect < 30) {
+        } else if (randomEffect < 40) {
           Writer.write("SIDE EFFECT! Health reduced, and this may cause to death");
+          selectedItem.decrementIntegrityByDrinking();
+          HeroUtils.writeNoLongerInInventoryMessage(selectedItem);
           reduceHealth(20);
-        } else if (30 < randomEffect && randomEffect < 101) {
+        } else if (randomEffect < 100) {
           Engine.rollDateAndRefresh(SECONDS_TO_DRINK_AN_ITEM);
           DrinkableComponent component = selectedItem.getDrinkableComponent();
           component.affect(this);
           Writer.write("You now have the followings under Super Power Effects");
-          Writer.write("20 Extra Attack");
-          Writer.write("45 more health");
-          Writer.write("The attack effect last for 10 minutes");
+          Writer.write(selectedItem.getExtraAttack() + " extra attack");
+          Writer.write(selectedItem.getHeal() + " more health");
+          Writer.write("The attack effect last for " + selectedItem.getDuration() + " minutes");
           selectedItem.decrementIntegrityByDrinking();
           HeroUtils.writeNoLongerInInventoryMessage(selectedItem);
         } 
@@ -711,13 +715,14 @@ public class Hero extends Creature {
       text.append(String.valueOf(selectedItem.getWeaponComponent().getHitRate()));
       text.append(".");
       text.append("\n");
-      if ( selectedItem.getQualifiedName().equals("Magic Mushroom")) {
-        text.append("The effects this drinkable gives you are ");  
-        text.append("HEALING ");
-        text.append("and ");
-        text.append("EXTRA DAMAGE");   
-      }
       Writer.write(text);
+      if ( selectedItem.getQualifiedName().equals("Magic Mushroom")) {
+        Writer.write("This item may give you the followings: ");
+        Writer.write(selectedItem.getExtraAttack() + " extra attack");
+        Writer.write(selectedItem.getHeal() + " more health");
+        Writer.write("The attack effect last for " + selectedItem.getDuration() + " minutes");  
+        Writer.write("...or cause your death or sleep");  
+      }
     }
   }
 
