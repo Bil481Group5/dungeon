@@ -60,12 +60,13 @@ public class Hero extends Creature {
   private static final int SECONDS_TO_HIT_AN_ITEM = 4;
   private static final int SECONDS_TO_EAT_AN_ITEM = 30;
   private static final int SECONDS_TO_DRINK_AN_ITEM = 10;
+  private static final int SECONDS_TO_WEAR_AN_ITEM = 250;
   private static final int SECONDS_TO_DROP_AN_ITEM = 2;
   private static final int SECONDS_TO_UNEQUIP = 4;
   private static final int SECONDS_TO_EQUIP = 6;
   private static final int SECONDS_TO_FISH = 60;
   private static final int SECONDS_TO_MILK_A_CREATURE = 45;
-  private static final int SECONDS_TO_SHEAR_A_CREATURE = 45;
+  private static final int SECONDS_TO_SHEAR_A_CREATURE = 250;
   private static final int SECONDS_TO_READ_EQUIPPED_CLOCK = 4;
   private static final int SECONDS_TO_READ_UNEQUIPPED_CLOCK = 10;
   private static final double MAXIMUM_HEALTH_THROUGH_REST = 0.6;
@@ -521,6 +522,45 @@ public class Hero extends Creature {
       }
     }
   }
+  /**
+   * Attempts to wear an item.
+   */
+  public void wearItem(String[] arguments) {
+    Item selectedItem = selectInventoryItem(arguments);
+    if (selectedItem != null) {
+      if (selectedItem.hasTag(Item.Tag.WEAR)) {
+        Engine.rollDateAndRefresh(SECONDS_TO_WEAR_AN_ITEM);
+        Writer.write("You started dressing your bounds.");
+        Sleeper.sleep(SECONDS_TO_WEAR_AN_ITEM);
+        Writer.write("-");
+        Sleeper.sleep(SECONDS_TO_WEAR_AN_ITEM);
+        Writer.write("-");
+        Sleeper.sleep(SECONDS_TO_WEAR_AN_ITEM);
+        Writer.write("-");
+        if (getInventory().hasItem(selectedItem)) {
+          FoodComponent food = selectedItem.getFoodComponent();
+          double remainingBites = selectedItem.getIntegrity().getCurrent() / (double) food.getIntegrityDecrementOnEat();
+          int healthChange;
+          if (remainingBites >= 1.0) {
+            healthChange = food.getNutrition();
+          } else {
+            // The absolute value of the healthChange will never be equal to nutrition, only smaller.
+            healthChange = (int) (food.getNutrition() * remainingBites);
+          }
+          selectedItem.decrementIntegrityByEat();
+          Writer.write("You bandage your wounds with " + selectedItem.getName() + ".");
+          addHealth(healthChange);
+          if (healthChange > 0) {
+            WELL_FED_EFFECT.affect(this);
+          }
+        } else {
+          HeroUtils.writeNoLongerInInventoryMessage(selectedItem);
+        }
+      } else {
+        Writer.write("You can only wear wool.");
+      }
+    }
+  }
 
   /**
    * Attempts to fish at the current location.
@@ -627,6 +667,12 @@ public class Hero extends Creature {
   private void shear(Creature creature) {
     Writer.write("You started shearing a goat.");
     Engine.rollDateAndRefresh(SECONDS_TO_SHEAR_A_CREATURE);
+    Sleeper.sleep(SECONDS_TO_SHEAR_A_CREATURE);
+    Writer.write("-");
+    Sleeper.sleep(SECONDS_TO_SHEAR_A_CREATURE);
+    Writer.write("-");
+    Sleeper.sleep(SECONDS_TO_SHEAR_A_CREATURE);
+    Writer.write("-");
     Sleeper.sleep(SECONDS_TO_SHEAR_A_CREATURE);
     Writer.write("You gather goat wool!");
     World world = getLocation().getWorld();
