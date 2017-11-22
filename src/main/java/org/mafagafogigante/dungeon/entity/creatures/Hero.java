@@ -909,7 +909,17 @@ public class Hero extends Creature {
   private String getAgeString() {
     return new Duration(dateOfBirth, Game.getGameState().getWorld().getWorldDate()).toString();
   }
-
+  
+  /**
+   * Return hero's age.
+   */
+  public int getAgeInt() {
+    String ageString = getAgeString();
+    String[] arrayAge = ageString.split(" ");
+    int age = Integer.parseInt(arrayAge[0]);
+    return age;
+  }
+  
   /**
    * Makes the Hero read the current date and time as well as he can.
    */

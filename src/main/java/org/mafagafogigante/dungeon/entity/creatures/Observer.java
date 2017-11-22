@@ -192,77 +192,105 @@ public class Observer implements Serializable {
         visibleLocations.get(locationName).add(dir);
         
         if (dir.getAbbreviation().equals("N")) {
-          Point adjacentNPoint = new Point(adjacentPoint, Direction.NORTH);
-          if (world.hasLocationAt(adjacentNPoint)) {
-            Location adjacentNLocation = world.getLocation(adjacentNPoint);
-            explorationStatistics.createEntryIfNotExists(adjacentNPoint, adjacentNLocation.getId());
-            String name2 = "North " + adjacentNLocation.getName().getSingular();
-            Color color2 = adjacentNLocation.getDescription().getColor();
-            ColoredString locationNName = new ColoredString(name2, color2);
-            if (!visibleLocations.containsKey(locationNName)) {
-              visibleLocations.put(locationNName, new ArrayList<Direction>());
+          Point ilk = adjacentPoint;
+          Direction son = Direction.NORTH;
+          for (int i = 0; i < Game.getGameState().getHero().getAgeInt() - 30 ; i++ ) {
+            Point adjacentNPoint = new Point(ilk, son);
+            if (world.hasLocationAt(adjacentNPoint)) {
+              Location adjacentNLocation = world.getLocation(adjacentNPoint);
+              explorationStatistics.createEntryIfNotExists(adjacentNPoint, adjacentNLocation.getId());
+              String name2 = "North " + adjacentNLocation.getName().getSingular();
+              Color color2 = adjacentNLocation.getDescription().getColor();
+              ColoredString locationNName = new ColoredString(name2, color2);
+              if (!visibleLocations.containsKey(locationNName)) {
+                visibleLocations.put(locationNName, new ArrayList<Direction>());
+              }
+              visibleLocations.get(locationNName).add(dir);
+              ilk = new Point(ilk, son);
+            } else {
+              break;
             }
-            visibleLocations.get(locationNName).add(dir);
           }
         } else if (dir.getAbbreviation().equals("E")) {
-          Point adjacentNPoint = new Point(adjacentPoint, Direction.EAST);
-          if (world.hasLocationAt(adjacentNPoint)) {
-            Location adjacentNLocation = world.getLocation(adjacentNPoint);
-            explorationStatistics.createEntryIfNotExists(adjacentNPoint, adjacentNLocation.getId());
-            String name2 = "East " + adjacentNLocation.getName().getSingular();
-            Color color2 = adjacentNLocation.getDescription().getColor();
-            ColoredString locationNName = new ColoredString(name2, color2);
-            if (!visibleLocations.containsKey(locationNName)) {
-              visibleLocations.put(locationNName, new ArrayList<Direction>());
+          Point ilk = adjacentPoint;
+          Direction son = Direction.EAST;
+          for (int i = 0; i < Game.getGameState().getHero().getAgeInt() - 30 ; i++ ) {
+            Point adjacentNPoint = new Point(ilk, son);
+            if (world.hasLocationAt(adjacentNPoint)) {
+              Location adjacentNLocation = world.getLocation(adjacentNPoint);
+              explorationStatistics.createEntryIfNotExists(adjacentNPoint, adjacentNLocation.getId());
+              String name2 = "East " + adjacentNLocation.getName().getSingular();
+              Color color2 = adjacentNLocation.getDescription().getColor();
+              ColoredString locationNName = new ColoredString(name2, color2);
+              if (!visibleLocations.containsKey(locationNName)) {
+                visibleLocations.put(locationNName, new ArrayList<Direction>());
+              }
+              visibleLocations.get(locationNName).add(dir);
+              ilk = new Point(ilk, son);
+            } else {
+              break;
             }
-            visibleLocations.get(locationNName).add(dir);
           }
         } else if (dir.getAbbreviation().equals("W")) {
-          Point adjacentNPoint = new Point(adjacentPoint, Direction.WEST);
-          if (world.hasLocationAt(adjacentNPoint)) {
-            Location adjacentNLocation = world.getLocation(adjacentNPoint);
-            explorationStatistics.createEntryIfNotExists(adjacentNPoint, adjacentNLocation.getId());
-            String name2 = "West " + adjacentNLocation.getName().getSingular();
-            Color color2 = adjacentNLocation.getDescription().getColor();
-            ColoredString locationNName = new ColoredString(name2, color2);
-            if (!visibleLocations.containsKey(locationNName)) {
-              visibleLocations.put(locationNName, new ArrayList<Direction>());
+          Point ilk = adjacentPoint;
+          Direction son = Direction.WEST;
+          for (int i = 0; i < Game.getGameState().getHero().getAgeInt() - 30 ; i++ ) {
+            Point adjacentNPoint = new Point(ilk, son);
+            if (world.hasLocationAt(adjacentNPoint)) {
+              Location adjacentNLocation = world.getLocation(adjacentNPoint);
+              explorationStatistics.createEntryIfNotExists(adjacentNPoint, adjacentNLocation.getId());
+              String name2 = "West " + adjacentNLocation.getName().getSingular();
+              Color color2 = adjacentNLocation.getDescription().getColor();
+              ColoredString locationNName = new ColoredString(name2, color2);
+              if (!visibleLocations.containsKey(locationNName)) {
+                visibleLocations.put(locationNName, new ArrayList<Direction>());
+              }
+              visibleLocations.get(locationNName).add(dir);
+              ilk = new Point(ilk, son);
+            } else {
+              break;
             }
-            visibleLocations.get(locationNName).add(dir);
           }
         } else if (dir.getAbbreviation().equals("S")) {
-          Point adjacentNPoint = new Point(adjacentPoint, Direction.SOUTH);
-          if (world.hasLocationAt(adjacentNPoint)) {
-            Location adjacentNLocation = world.getLocation(adjacentNPoint);
-            explorationStatistics.createEntryIfNotExists(adjacentNPoint, adjacentNLocation.getId());
-            String name2 = "South " + adjacentNLocation.getName().getSingular();
-            Color color2 = adjacentNLocation.getDescription().getColor();
-            ColoredString locationNName = new ColoredString(name2, color2);
-            if (!visibleLocations.containsKey(locationNName)) {
-              visibleLocations.put(locationNName, new ArrayList<Direction>());
+          Point ilk = adjacentPoint;
+          Direction son = Direction.SOUTH;
+          for (int i = 0; i < Game.getGameState().getHero().getAgeInt() - 30 ; i++ ) {
+            Point adjacentNPoint = new Point(ilk, son);
+            if (world.hasLocationAt(adjacentNPoint)) {
+              Location adjacentNLocation = world.getLocation(adjacentNPoint);
+              explorationStatistics.createEntryIfNotExists(adjacentNPoint, adjacentNLocation.getId());
+              String name2 = "South " + adjacentNLocation.getName().getSingular();
+              Color color2 = adjacentNLocation.getDescription().getColor();
+              ColoredString locationNName = new ColoredString(name2, color2);
+              if (!visibleLocations.containsKey(locationNName)) {
+                visibleLocations.put(locationNName, new ArrayList<Direction>());
+              }
+              visibleLocations.get(locationNName).add(dir);
+              ilk = new Point(ilk, son);
+            } else {
+              break;
             }
-            visibleLocations.get(locationNName).add(dir);
           }
-        }        
+        } 
       }
     }
     if (!visibleLocations.isEmpty()) {
       for (Entry<ColoredString, ArrayList<Direction>> entry : visibleLocations.entrySet()) {
         if (entry.getKey().getString().startsWith("North")) {
-          dungeonString.append(String.format("To Upper %s you see ", Utils.enumerate(entry.getValue())));
-        } else if (entry.getKey().getString().startsWith("Wes")) {
-          dungeonString.append(String.format("To Right %s you see ", Utils.enumerate(entry.getValue())));
+          continue;
+        } else if (entry.getKey().getString().startsWith("West")) {
+          continue;
         } else if (entry.getKey().getString().startsWith("East")) {
-          dungeonString.append(String.format("To Left %s you see ", Utils.enumerate(entry.getValue())));
+          continue;
         } else if (entry.getKey().getString().startsWith("South")) {
-          dungeonString.append(String.format("To Lower %s you see ", Utils.enumerate(entry.getValue())));
+          continue;
         } else {
           dungeonString.append(String.format("To %s you see ", Utils.enumerate(entry.getValue())));
-        }
-        dungeonString.setColor(entry.getKey().getColor());
-        dungeonString.append(String.format("%s", entry.getKey().getString()));
-        dungeonString.resetColor();
-        dungeonString.append(".\n");
+          dungeonString.setColor(entry.getKey().getColor());
+          dungeonString.append(String.format("%s", entry.getKey().getString()));
+          dungeonString.resetColor();
+          dungeonString.append(".\n");
+        }        
       }
     }
   }
