@@ -829,6 +829,11 @@ public class Hero extends Creature {
           Writer.write("You faced the dark side of the sword and the extreme power killed you.");
           int h = getHealth().getCurrent();
           reduceHealth(h); //dead
+        } else {
+          DungeonString string = new DungeonString();
+          string.append(getName() + " equipped " + weapon.getQualifiedName() + ".");
+          string.append(" " + "Your total damage is now " + getTotalDamage() + ".");
+          Writer.write(string);    
         }
       } else {  
         DungeonString string = new DungeonString();
