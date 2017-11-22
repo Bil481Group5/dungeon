@@ -588,7 +588,8 @@
         "WEAPON",
         "FOOD",
         "DECOMPOSES",
-        "WEIGHT_PROPORTIONAL_TO_INTEGRITY"
+        "WEIGHT_PROPORTIONAL_TO_INTEGRITY",
+        "WEAR"
       ],
       "integrity": {
         "current": 20,

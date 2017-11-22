@@ -274,6 +274,12 @@ final class CommandSets {
         Game.getGameState().getHero().unequipWeapon();
       }
     });
+    commandSet.addCommand(new Command("wear", "Wear the specified item.") {
+      @Override
+      public void execute(@NotNull String[] arguments) {
+        Game.getGameState().getHero().wearItem(arguments);
+      }
+    });
     commandSet.addCommand(new Command("wiki", "Searches the wiki for an article.") {
       @Override
       public void execute(@NotNull String[] arguments) {
