@@ -82,6 +82,7 @@ public class Hero extends Creature {
   private final AchievementTracker achievementTracker;
   private final Statistics statistics;
   private final Date dateOfBirth;
+  private Item equippedWeapon;
 
   Hero(CreaturePreset preset, Statistics statistics, Date dateOfBirth) {
     super(preset);
@@ -804,10 +805,15 @@ public class Hero extends Creature {
       }
     }
   }
+  
+  public Item getEquippedWeapon() {
+    return equippedWeapon;
+  }
 
   private void equipWeapon(Item weapon) {
     if (hasWeapon()) {
       if (getWeapon() == weapon) {
+        equippedWeapon = weapon;
         Writer.write(getName().getSingular() + " is already equipping " + weapon.getName().getSingular() + ".");
         return;
       } else {
@@ -817,10 +823,19 @@ public class Hero extends Creature {
     Engine.rollDateAndRefresh(SECONDS_TO_EQUIP);
     if (getInventory().hasItem(weapon)) {
       setWeapon(weapon);
-      DungeonString string = new DungeonString();
-      string.append(getName() + " equipped " + weapon.getQualifiedName() + ".");
-      string.append(" " + "Your total damage is now " + getTotalDamage() + ".");
-      Writer.write(string);
+      if (weapon.getQualifiedName().equals("Sword of God")) {
+        int r = Random.nextInteger(100);
+        if (r <= 50) {
+          Writer.write("You faced the dark side of the sword and the extreme power killed you.");
+          int h = getHealth().getCurrent();
+          reduceHealth(h); //dead
+        }
+      } else {  
+        DungeonString string = new DungeonString();
+        string.append(getName() + " equipped " + weapon.getQualifiedName() + ".");
+        string.append(" " + "Your total damage is now " + getTotalDamage() + ".");
+        Writer.write(string);
+      }    
     } else {
       HeroUtils.writeNoLongerInInventoryMessage(weapon);
     }
@@ -920,6 +935,42 @@ public class Hero extends Creature {
    */
   public void walk(String[] arguments) {
     walker.parseHeroWalk(arguments);
+  }
+  
+  /**
+    * Randomly teleport.
+    */
+  public void teleport() {
+    if (getEquippedWeapon() != null) {
+      if (getEquippedWeapon().getQualifiedName().equals("Sword of God")) {
+        String[] arr = new String[1]; 
+        //walk(arr);
+        int rand = Random.nextInteger(3);
+        if (rand == 0) {
+          arr[0] = "North";
+        }
+        if (rand == 1) {
+          arr[0] = "West";
+        }
+        if (rand == 2) {
+          arr[0] = "South";
+        }
+        if (rand == 3) {
+          arr[0] = "East";
+        }        
+        int rand2 = Random.nextInteger(7);
+        int temp = rand2;
+        while (rand2 > 0) {
+          walk(arr);
+          rand2 -= 1; 
+        }
+        Writer.write("You get teleport " + temp + " " + arr[0] + " randomly by means of Sword of God !");
+      } else {
+        Writer.write("You cannot teleport without Sword of God."); 
+      }
+    } else {
+      Writer.write("You cannot teleport without Sword of God."); 
+    }
   }
 
   /**

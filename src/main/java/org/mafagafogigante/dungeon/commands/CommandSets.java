@@ -250,6 +250,12 @@ final class CommandSets {
         Game.getGameState().getHero().printAllStatus();
       }
     });
+    commandSet.addCommand(new Command("teleport", "Randomly teleports hero.") {
+      @Override
+      public void execute(@NotNull String[] arguments) {
+        Game.getGameState().getHero().teleport();
+      }
+    });
     commandSet.addCommand(new Command("time", "Displays what the character knows about the current time.") {
       @Override
       public void execute(@NotNull String[] arguments) {
