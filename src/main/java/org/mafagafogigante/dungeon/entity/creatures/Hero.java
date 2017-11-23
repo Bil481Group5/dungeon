@@ -184,10 +184,9 @@ public class Hero extends Creature {
     }
   }
 
- /**
-   * Sleep until the sun rises.
-   *
-   * <p>Depending on how much the Hero will sleep, this method may print a few dreams.
+  /** 
+   * Sleep without caring the time.
+   * it takes longer than regular sleep.
    */
   public void sleepTimeIndependent() {
     int seconds;
@@ -196,6 +195,7 @@ public class Hero extends Creature {
     seconds = PartOfDay.getSecondsToNext(world.getWorldDate(), PartOfDay.DAWN);
     // In order to increase realism, add some time for the time it would take to wake up exactly at dawn.
     seconds += nextRandomTimeChunk();
+    seconds *= 3;
     statistics.getHeroStatistics().incrementSleepingTime(seconds);
     while (seconds > 0) {
       final int cycleDuration = Math.min(DREAM_DURATION_IN_SECONDS, seconds);
@@ -600,12 +600,12 @@ public class Hero extends Creature {
     if (selectedItem != null) {
       if (selectedItem.getQualifiedName().equals("Magic Mushroom")) {
         int randomEffect = Random.nextInteger(99);
-        if (randomEffect < 20) {
+        if (randomEffect < 30) {
           Writer.write("SIDE EFFECT! Mushroom caused to sleep");
           selectedItem.decrementIntegrityByDrinking();
           HeroUtils.writeNoLongerInInventoryMessage(selectedItem);
           sleepTimeIndependent();
-        } else if (randomEffect < 40) {
+        } else if (randomEffect < 60) {
           Writer.write("SIDE EFFECT! Health reduced, and this may cause to death");
           selectedItem.decrementIntegrityByDrinking();
           HeroUtils.writeNoLongerInInventoryMessage(selectedItem);

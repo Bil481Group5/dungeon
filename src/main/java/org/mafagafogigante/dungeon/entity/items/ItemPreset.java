@@ -45,9 +45,7 @@ public final class ItemPreset implements Preset, Serializable {
   private boolean unique;
   private int drinkableDoses;
   private int integrityDecrementPerDose;
-  private int extraAttack;
-  private int heal;
-  private String duration;
+  private List<String> effectParameters;
 
   List<Effect> getDrinkableEffects() {
     return drinkableEffects;
@@ -55,23 +53,19 @@ public final class ItemPreset implements Preset, Serializable {
 
   void addDrinkableEffect(Id effectId, List<String> effectParameters) {
     drinkableEffects.add(EffectFactory.getDefaultFactory().getEffect(effectId, effectParameters));
-    if (effectId.toString().equals("SUPER_EFFECT")) {
-      heal = Integer.parseInt(effectParameters.get(0));
-      extraAttack = Integer.parseInt(effectParameters.get(1));
-      duration = effectParameters.get(2);
-    }
+    this.effectParameters = effectParameters;
   }
 
   public int getHeal() {
-    return heal; 
+    return Integer.parseInt(effectParameters.get(0)); 
   }
 
   public int getExtraAttack() {
-    return extraAttack; 
+    return Integer.parseInt(effectParameters.get(1)); 
   }
  
   public String getDuration() {
-    return duration; 
+    return effectParameters.get(2); 
   }
 
   public Id getId() {
