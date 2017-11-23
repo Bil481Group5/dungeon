@@ -238,6 +238,12 @@ final class CommandSets {
         Game.getGameState().getHero().sleep();
       }
     });
+    commandSet.addCommand(new Command("sleepAYear", "Sleeps all year.") {
+      @Override
+      public void execute(@NotNull String[] arguments) {
+        Game.getGameState().getHero().sleepAYear();
+      }
+    });    
     commandSet.addCommand(new Command("spells", "Lists all the spells known by the character.") {
       @Override
       public void execute(@NotNull String[] arguments) {

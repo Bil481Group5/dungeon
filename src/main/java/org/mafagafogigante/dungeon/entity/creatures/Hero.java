@@ -183,6 +183,32 @@ public class Hero extends Creature {
       Writer.write("You can only sleep at night.");
     }
   }
+  
+  /**
+   * Sleep all year.
+   */
+  public void sleepAYear() {
+    int seconds = 1;
+    seconds *= 86400;
+    int day = seconds;
+    int twoMonth = seconds * 20;
+    seconds *= 30;      // three month     
+    seconds *= 4;
+    seconds = seconds - twoMonth;
+    statistics.getHeroStatistics().incrementSleepingTime(seconds);
+    while (seconds > 0) {
+      final int cycleDuration = day;
+      Engine.rollDateAndRefresh(cycleDuration);
+      long timeForSleep = (long) day;
+      Sleeper.sleep(timeForSleep);      
+      seconds -= cycleDuration;      
+    }
+    if (!getHealth().isFull()) {
+      int healing = getHealth().getMaximum() * day / SECONDS_TO_REGENERATE_FULL_HEALTH;
+      getHealth().incrementBy(healing);
+    }
+    Writer.write("You wake up.");
+  }
 
   /** 
    * Sleep without caring the time.
